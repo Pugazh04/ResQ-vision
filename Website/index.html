@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ResQ-Vision</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="logo">🟢 ResQ-Vision</div>
+  <nav class="nav">
+    <button onclick="scrollToSection('summary')">Summary</button>
+    <button onclick="scrollToSection('images')">Images</button>
+    <button onclick="scrollToSection('analytics')">Analytics</button>
+    <button onclick="scrollToSection('insights')">Insights</button>
+  </nav>
+</header>
+
+<main class="dashboard">
+
+<!-- ================= SUMMARY ================= -->
+<section id="summary" class="section">
+  <div class="grid-2">
+
+    <div class="analysis-card">
+      <div class="card-header">
+        <h2>Analysis Overview</h2>
+        <span id="severityBadge" class="badge">Severity</span>
+      </div>
+
+      <div class="metric-grid">
+        <div>
+          <p class="label">SEVERITY SCORE</p>
+          <p class="value" id="severityScore"></p>
+          <p class="sub">0–5 scale</p>
+        </div>
+
+        <div>
+          <p class="label">DAMAGED AREA</p>
+          <p class="value" id="damagedArea"></p>
+          <p class="sub">of scene</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="severity-card">
+      <div class="card-header">
+        <h2>Overall Severity Level</h2>
+        <span class="muted">based on severity score</span>
+      </div>
+
+      <div class="chart-wrapper">
+        <canvas id="severityChart"></canvas>
+      </div>
+
+      <div class="severity-scale">
+        <span>Low</span>
+        <span>Medium</span>
+        <span>High</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= IMAGES ================= -->
+<section id="images" class="section">
+  <h2>Scene View</h2>
+  <div class="grid-2">
+    <div class="image-card">
+      <h3>Enhanced Image</h3>
+      <img src="../enhance_output/enhance_img.jpg">
+    </div>
+    <div class="image-card">
+      <h3>Segmented Image</h3>
+      <img src="../severity_output/color_mask_img.png">
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANALYTICS ================= -->
+<section id="analytics" class="section">
+  <h2>Damage & Impact Analytics</h2>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>Damage Distribution</h3>
+      <canvas id="damageChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Severity Heatmap</h3>
+      <img src="../severity_output/mask_img_heatmap.png">
+    </div>
+
+    <div class="card">
+      <h3>Impact Matrix</h3>
+      <img src="../severity_output/mask_img_impact_matrix.png">
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section id="insights" class="section">
+  <h2>Generated Insights</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>Key Observations</h3>
+      <ul id="keyInsights"></ul>
+    </div>
+
+    <div class="card">
+      <h3>Severity Interpretation</h3>
+      <ul id="severityInsights"></ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

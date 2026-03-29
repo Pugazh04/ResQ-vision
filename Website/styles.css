@@ -1,0 +1,166 @@
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(90deg, #ff9a56, #ff8c42);  /* Changed to orange gradient */
+}
+
+.dashboard {
+  padding: 28px;
+}
+
+/* ================= TOP BAR ================= */
+.topbar {
+  background: #d94d1a;  /* Changed to dark orange */
+  color: white;
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  margin-left: 18px;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 28px;   /* increase size (try 20–24px) */
+  font-weight: 700;
+}
+
+
+/* ================= GRIDS ================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* ================= SUMMARY CARDS ================= */
+.analysis-card {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);  /* Changed to orange gradient */
+  color: white;
+  border-radius: 18px;
+  padding: 18px 22px;
+  height: 240px;
+}
+
+.severity-card {
+  background:linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  border-radius: 18px;
+  padding: 18px 22px;
+  height: 240px;
+  overflow: hidden;
+}
+
+/* Chart container */
+.chart-wrapper {
+  position: relative;
+  height: 150px;
+}
+
+/* ================= HEADERS ================= */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: #ffedd5;  /* Changed to light orange */
+  color: #9a3412;  /* Changed to dark orange text */
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.muted {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* ================= METRICS ================= */
+.metric-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.label {
+  font-size: 14px;  /* Increased from 12px */
+  letter-spacing: 1px;
+  font-weight: 600;  /* Made them bolder for better visibility */
+}
+
+.value {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.sub {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ================= SEVERITY SCALE ================= */
+.severity-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* ================= OTHER CARDS ================= */
+.card,
+.image-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ================= IMAGES ================= */
+img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ================= BULLET POINT SPACING ================= */
+#keyInsights li,
+#severityInsights li {
+  margin-bottom: 12px;  /* Add space between bullet points */
+  line-height: 1.6;  /* Better line height for readability */
+}
+
+#keyInsights li:last-child,
+#severityInsights li:last-child {
+  margin-bottom: 0;  /* Remove space after last item */
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 1000px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-card,
+  .severity-card {
+    height: auto;
+  }
+}
